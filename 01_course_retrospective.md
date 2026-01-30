@@ -16,7 +16,7 @@
 ## 2. What went wrong / Challenges
 - One major challenge I faced was **cloning a folder inside the repository**, which caused my **GitHub Pages not to work properly** and resulted in missing assets on the deployed site.  
 - I found the **personal portfolio project difficult** because it was my **first time creating one**, and I was still learning how to structure and design it properly.  
-- I struggled with **time management** because many subjects had projects with **near deadlines**, while I also needed to prepare for **external competitions**, which made me feel stressed at times.  
+- I struggled with **time management** because many subjects had projects with **near deadlines**, while I also needed to prepare for **external competitions**, which made me feel stressed and frustrated at times.  
 
 ---
 
