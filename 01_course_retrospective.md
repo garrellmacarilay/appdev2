@@ -1,8 +1,8 @@
 # Course Retrospective Assignment
 
 ### Name: Garrell Macarilay  
-### Course: Bachelor of Science in Information System  
-### Section: BSIS-3  
+### Course: Bachelor of Science in Information Systems 
+### Section: BSIS-3B  
 
 ---
 
@@ -39,4 +39,5 @@
 - I expect to develop a **mobile application that is usable and functional**, and I hope it can be **downloadable on the Play Store**.  
 - My goal is to **improve my development skills**, learn more **technical concepts**, and understand different **tech stacks** used in mobile app development.  
 - The support that helps me succeed the most is having **faith in God**, because it reminds me to act not only based on my own skills, but also with **love, patience, and faith**, which motivates me to keep going throughout the semester.  
+
 
