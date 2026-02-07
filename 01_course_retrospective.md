@@ -8,7 +8,7 @@
 
 ## 1. What went well
 - I felt confident when learning and using **Git commands**, especially during activities and projects. These commands helped me **debug issues**, manage versions, and fix mistakes more efficiently.  
-- I became more comfortable using **GitHub** to upload projects and track changes, which improved my workflow.  
+- I became more comfortable using **GitHub** to upload projects and track changes, which improved my code workflow.  
 - I was able to complete my tasks even under pressure, which helped me build confidence in my technical skills.  
 
 ---
@@ -39,5 +39,6 @@
 - I expect to develop a **mobile application that is usable and functional**, and I hope it can be **downloadable on the Play Store**.  
 - My goal is to **improve my development skills**, learn more **technical concepts**, and understand different **tech stacks** used in mobile app development.  
 - The support that helps me succeed the most is having **faith in God**, because it reminds me to act not only based on my own skills, but also with **love, patience, and faith**, which motivates me to keep going throughout the semester.  
+
 
 
