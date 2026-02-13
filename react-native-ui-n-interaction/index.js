@@ -1,8 +1,8 @@
 import { registerRootComponent } from 'expo';
 
-import  FixedDimensions from './src/screens/FixedDimensions';
+import  FlexDimensions from './src/screens/FlexDimensions';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
 // the environment is set up appropriately
-registerRootComponent(FixedDimensions);
+registerRootComponent(FlexDimensions);
