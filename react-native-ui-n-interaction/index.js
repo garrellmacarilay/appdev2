@@ -1,8 +1,8 @@
 import { registerRootComponent } from 'expo';
 
-import LotsOfStyles from './src/screens/LotsOfStyles';
+import  FixedDimensions from './src/screens/FixedDimensions';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
 // the environment is set up appropriately
-registerRootComponent(LotsOfStyles);
+registerRootComponent(FixedDimensions);
