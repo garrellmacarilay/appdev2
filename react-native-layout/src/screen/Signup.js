@@ -52,6 +52,25 @@ const styles = StyleSheet.create({
     eyeIcon: {
         padding: 4,
     },
+    signupButton: {
+        width: '100%',
+        backgroundColor: '#0066FF',
+        borderRadius: 12,
+        paddingVertical: 16,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: '#0066FF',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 4,
+        marginBottom: 24,
+    },
+    signupButtonText: {
+        color: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: '600',
+    },
 });
 
 export default function Signup() {
@@ -116,6 +135,11 @@ export default function Signup() {
                     <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
                 </TouchableOpacity>
             </View>
+
+            {/* Signup Button */}
+            <TouchableOpacity style={styles.signupButton}>
+                <Text style={styles.signupButtonText}>Sign Up</Text>
+            </TouchableOpacity>
         </View>
     );
 }
