@@ -71,6 +71,62 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
     },
+    dividerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 24,
+    },
+    dividerLine: {
+        flex: 1,
+        height: 1,
+        backgroundColor: '#E2E8F0',
+    },
+    dividerText: {
+        color: '#94A3B8',
+        fontSize: 13,
+        marginHorizontal: 16,
+    },
+    socialContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 16,
+        marginBottom: 32,
+    },
+    socialButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        paddingHorizontal: 24,
+        paddingVertical: 12,
+        borderRadius: 10,
+        width: '47%',
+        gap: 8,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05,
+        shadowRadius: 6,
+        elevation: 2,
+    },
+    socialButtonText: {
+        color: '#64748B',
+        fontSize: 14,
+        fontWeight: '500',
+    },
+    loginContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    loginText: {
+        color: '#94A3B8',
+        fontSize: 14,
+    },
+    loginLink: {
+        color: '#3B82F6',
+        fontSize: 14,
+        fontWeight: '600',
+        marginLeft: 4,
+    },
 });
 
 export default function Signup() {
@@ -140,6 +196,34 @@ export default function Signup() {
             <TouchableOpacity style={styles.signupButton}>
                 <Text style={styles.signupButtonText}>Sign Up</Text>
             </TouchableOpacity>
+
+            {/* Divider */}
+            <View style={styles.dividerContainer}>
+                <View style={styles.dividerLine} />
+                <Text style={styles.dividerText}>Or Continue with</Text>
+                <View style={styles.dividerLine} />
+            </View>
+
+            {/* Social Signup Buttons */}
+            <View style={styles.socialContainer}>
+                <TouchableOpacity style={styles.socialButton}>
+                    <Ionicons name="logo-google" size={20} color="#DB4437" />
+                    <Text style={styles.socialButtonText}>Google</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.socialButton}>
+                    <Ionicons name="logo-facebook" size={20} color="#1877F2" />
+                    <Text style={styles.socialButtonText}>Facebook</Text>
+                </TouchableOpacity>
+            </View>
+
+            {/* Login Redirect Link */}
+            <View style={styles.loginContainer}>
+                <Text style={styles.loginText}>Already have an account?</Text>
+                <TouchableOpacity>
+                    <Text style={styles.loginLink}>Login</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
