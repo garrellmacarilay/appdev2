@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function Login() {
+export default function Login({ navigation }) {
     return (
         <View style={styles.container}>
             {/* Illustration */}
@@ -212,7 +212,7 @@ export default function Login() {
             {/* Sign Up Link */}
             <View style={styles.signupContainer}>
                 <Text style={styles.signupText}>Haven't any account?</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                     <Text style={styles.signupLink}>Sign up</Text>
                 </TouchableOpacity>
             </View>

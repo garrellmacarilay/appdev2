@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function Signup() {
+export default function Signup({ navigation }) {
     return (
         <View style={styles.container}>
             {/* Illustration */}
@@ -220,7 +220,7 @@ export default function Signup() {
             {/* Login Redirect Link */}
             <View style={styles.loginContainer}>
                 <Text style={styles.loginText}>Already have an account?</Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                     <Text style={styles.loginLink}>Login</Text>
                 </TouchableOpacity>
             </View>
