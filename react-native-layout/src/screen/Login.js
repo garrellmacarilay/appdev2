@@ -50,6 +50,21 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
+     socialContainer:{
+        flexDirection:'row',
+        justifyContent: 'center',
+        marginTop: 20,
+        gap: 20,
+    },
+
+    socialButton:{
+        flexDirection:'row',
+        alignItems: 'center',
+        padding: 10,
+        gap:5
+    }
+
+
 
 
 });
@@ -82,6 +97,15 @@ export default function Login() {
            <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
+
+             <Text> --- Or Continue With ---</Text>
+
+             <View style={styles.socialContainer}>
+                <TouchableOpacity style={[styles.socialButton, {backgroundColor: 'white', borderRadius: 8}]}>
+                    <Ionicons name="logo-google" size={20} color="black"/>
+                    <Text style={{color: 'black'}}>Google</Text>
+                </TouchableOpacity>
+            </View>
            
            
            
