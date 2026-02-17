@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
@@ -141,81 +141,83 @@ const styles = StyleSheet.create({
 
 export default function Login({ navigation }) {
     return (
-        <View style={styles.container}>
-            {/* Illustration */}
-            <Image
-                source={require('../assets/login.png')}
-                style={styles.illustration}
-                resizeMode="contain"
-            />
-
-            {/* Heading */}
-            <Text style={styles.heading}>Sign In</Text>
-            <Text style={styles.subtitle}>Enter valid user name & password to continue</Text>
-
-            {/* Username Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="mail-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Email"
-                    placeholderTextColor="#CBD5E1"
-                    style={styles.input}
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#F8F9FD' }}>
+            <View style={styles.container}>
+                {/* Illustration */}
+                <Image
+                    source={require('../assets/login.png')}
+                    style={styles.illustration}
+                    resizeMode="contain"
                 />
-            </View>
 
-            {/* Password Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Password"
-                    placeholderTextColor="#CBD5E1"
-                    secureTextEntry={true}
-                    style={styles.input}
-                />
-                <TouchableOpacity style={styles.eyeIcon}>
-                    <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                {/* Heading */}
+                <Text style={styles.heading}>Sign In</Text>
+                <Text style={styles.subtitle}>Enter valid user name & password to continue</Text>
+
+                {/* Username Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="mail-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Email"
+                        placeholderTextColor="#CBD5E1"
+                        style={styles.input}
+                    />
+                </View>
+
+                {/* Password Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Password"
+                        placeholderTextColor="#CBD5E1"
+                        secureTextEntry={true}
+                        style={styles.input}
+                    />
+                    <TouchableOpacity style={styles.eyeIcon}>
+                        <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                    </TouchableOpacity>
+                </View>
+
+                {/* Forgot Password */}
+                <View style={styles.forgotPasswordContainer}>
+                    <TouchableOpacity>
+                        <Text style={styles.forgotPassword}>Forget password</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* Login Button */}
+                <TouchableOpacity style={styles.loginButton}>
+                    <Text style={styles.loginButtonText}>Login</Text>
                 </TouchableOpacity>
+
+                {/* Divider */}
+                <View style={styles.dividerContainer}>
+                    <View style={styles.dividerLine} />
+                    <Text style={styles.dividerText}>Or Continue with</Text>
+                    <View style={styles.dividerLine} />
+                </View>
+
+                {/* Social Login Buttons */}
+                <View style={styles.socialContainer}>
+                    <TouchableOpacity style={styles.socialButton}>
+                        <Ionicons name="logo-google" size={20} color="#DB4437" />
+                        <Text style={styles.socialButtonText}>Google</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.socialButton}>
+                        <Ionicons name="logo-facebook" size={20} color="#1877F2" />
+                        <Text style={styles.socialButtonText}>Facebook</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* Sign Up Link */}
+                <View style={styles.signupContainer}>
+                    <Text style={styles.signupText}>Haven't any account?</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+                        <Text style={styles.signupLink}>Sign up</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-
-            {/* Forgot Password */}
-            <View style={styles.forgotPasswordContainer}>
-                <TouchableOpacity>
-                    <Text style={styles.forgotPassword}>Forget password</Text>
-                </TouchableOpacity>
-            </View>
-
-            {/* Login Button */}
-            <TouchableOpacity style={styles.loginButton}>
-                <Text style={styles.loginButtonText}>Login</Text>
-            </TouchableOpacity>
-
-            {/* Divider */}
-            <View style={styles.dividerContainer}>
-                <View style={styles.dividerLine} />
-                <Text style={styles.dividerText}>Or Continue with</Text>
-                <View style={styles.dividerLine} />
-            </View>
-
-            {/* Social Login Buttons */}
-            <View style={styles.socialContainer}>
-                <TouchableOpacity style={styles.socialButton}>
-                    <Ionicons name="logo-google" size={20} color="#DB4437" />
-                    <Text style={styles.socialButtonText}>Google</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.socialButton}>
-                    <Ionicons name="logo-facebook" size={20} color="#1877F2" />
-                    <Text style={styles.socialButtonText}>Facebook</Text>
-                </TouchableOpacity>
-            </View>
-
-            {/* Sign Up Link */}
-            <View style={styles.signupContainer}>
-                <Text style={styles.signupText}>Haven't any account?</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-                    <Text style={styles.signupLink}>Sign up</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+        </SafeAreaView>
     );
 }

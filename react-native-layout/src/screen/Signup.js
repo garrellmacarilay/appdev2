@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
@@ -131,99 +131,101 @@ const styles = StyleSheet.create({
 
 export default function Signup({ navigation }) {
     return (
-        <View style={styles.container}>
-            {/* Illustration */}
-            <Image
-                source={require('../assets/login.png')}
-                style={styles.illustration}
-                resizeMode="contain"
-            />
-
-            {/* Heading */}
-            <Text style={styles.heading}>Sign Up</Text>
-            <Text style={styles.subtitle}>Create your account to get started</Text>
-
-            {/* Username Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="person-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Username"
-                    placeholderTextColor="#CBD5E1"
-                    style={styles.input}
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#F8F9FD' }}>
+            <View style={styles.container}>
+                {/* Illustration */}
+                <Image
+                    source={require('../assets/login.png')}
+                    style={styles.illustration}
+                    resizeMode="contain"
                 />
-            </View>
 
-            {/* Email Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="mail-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Email"
-                    placeholderTextColor="#CBD5E1"
-                    style={styles.input}
-                    keyboardType="email-address"
-                />
-            </View>
+                {/* Heading */}
+                <Text style={styles.heading}>Sign Up</Text>
+                <Text style={styles.subtitle}>Create your account to get started</Text>
 
-            {/* Password Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Password"
-                    placeholderTextColor="#CBD5E1"
-                    secureTextEntry={true}
-                    style={styles.input}
-                />
-                <TouchableOpacity style={styles.eyeIcon}>
-                    <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                {/* Username Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="person-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Username"
+                        placeholderTextColor="#CBD5E1"
+                        style={styles.input}
+                    />
+                </View>
+
+                {/* Email Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="mail-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Email"
+                        placeholderTextColor="#CBD5E1"
+                        style={styles.input}
+                        keyboardType="email-address"
+                    />
+                </View>
+
+                {/* Password Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Password"
+                        placeholderTextColor="#CBD5E1"
+                        secureTextEntry={true}
+                        style={styles.input}
+                    />
+                    <TouchableOpacity style={styles.eyeIcon}>
+                        <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                    </TouchableOpacity>
+                </View>
+
+                {/* Confirm Password Input */}
+                <View style={styles.inputContainer}>
+                    <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
+                    <TextInput
+                        placeholder="Confirm Password"
+                        placeholderTextColor="#CBD5E1"
+                        secureTextEntry={true}
+                        style={styles.input}
+                    />
+                    <TouchableOpacity style={styles.eyeIcon}>
+                        <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                    </TouchableOpacity>
+                </View>
+
+                {/* Signup Button */}
+                <TouchableOpacity style={styles.signupButton}>
+                    <Text style={styles.signupButtonText}>Sign Up</Text>
                 </TouchableOpacity>
+
+                {/* Divider */}
+                <View style={styles.dividerContainer}>
+                    <View style={styles.dividerLine} />
+                    <Text style={styles.dividerText}>Or Continue with</Text>
+                    <View style={styles.dividerLine} />
+                </View>
+
+                {/* Social Signup Buttons */}
+                <View style={styles.socialContainer}>
+                    <TouchableOpacity style={styles.socialButton}>
+                        <Ionicons name="logo-google" size={20} color="#DB4437" />
+                        <Text style={styles.socialButtonText}>Google</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.socialButton}>
+                        <Ionicons name="logo-facebook" size={20} color="#1877F2" />
+                        <Text style={styles.socialButtonText}>Facebook</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* Login Redirect Link */}
+                <View style={styles.loginContainer}>
+                    <Text style={styles.loginText}>Already have an account?</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.loginLink}>Login</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-
-            {/* Confirm Password Input */}
-            <View style={styles.inputContainer}>
-                <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
-                <TextInput
-                    placeholder="Confirm Password"
-                    placeholderTextColor="#CBD5E1"
-                    secureTextEntry={true}
-                    style={styles.input}
-                />
-                <TouchableOpacity style={styles.eyeIcon}>
-                    <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
-                </TouchableOpacity>
-            </View>
-
-            {/* Signup Button */}
-            <TouchableOpacity style={styles.signupButton}>
-                <Text style={styles.signupButtonText}>Sign Up</Text>
-            </TouchableOpacity>
-
-            {/* Divider */}
-            <View style={styles.dividerContainer}>
-                <View style={styles.dividerLine} />
-                <Text style={styles.dividerText}>Or Continue with</Text>
-                <View style={styles.dividerLine} />
-            </View>
-
-            {/* Social Signup Buttons */}
-            <View style={styles.socialContainer}>
-                <TouchableOpacity style={styles.socialButton}>
-                    <Ionicons name="logo-google" size={20} color="#DB4437" />
-                    <Text style={styles.socialButtonText}>Google</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.socialButton}>
-                    <Ionicons name="logo-facebook" size={20} color="#1877F2" />
-                    <Text style={styles.socialButtonText}>Facebook</Text>
-                </TouchableOpacity>
-            </View>
-
-            {/* Login Redirect Link */}
-            <View style={styles.loginContainer}>
-                <Text style={styles.loginText}>Already have an account?</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.loginLink}>Login</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+        </SafeAreaView>
     );
 }
