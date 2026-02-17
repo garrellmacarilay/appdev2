@@ -1,8 +1,8 @@
 import { registerRootComponent } from 'expo';
 
-import AlignSelfLayout from './src/screen/AlignSelfLayout';
+import AlignContentLayout from './src/screen/AlignContentLayout';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
 // the environment is set up appropriately
-registerRootComponent(AlignSelfLayout);
+registerRootComponent(AlignContentLayout);
