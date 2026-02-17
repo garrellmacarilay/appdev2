@@ -26,6 +26,29 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         textAlign: 'center',
     },
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%',
+        backgroundColor: '#FFFFFF',
+        borderRadius: 12,
+        paddingHorizontal: 16,
+        paddingVertical: 14,
+        marginBottom: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05,
+        shadowRadius: 8,
+        elevation: 2,
+    },
+    icon: {
+        marginRight: 12,
+    },
+    input: {
+        flex: 1,
+        fontSize: 15,
+        color: '#1E293B',
+    },
 });
 
 export default function Signup() {
@@ -41,6 +64,16 @@ export default function Signup() {
             {/* Heading */}
             <Text style={styles.heading}>Sign Up</Text>
             <Text style={styles.subtitle}>Create your account to get started</Text>
+
+            {/* Username Input */}
+            <View style={styles.inputContainer}>
+                <Ionicons style={styles.icon} name="person-outline" size={20} color="#94A3B8" />
+                <TextInput
+                    placeholder="Username"
+                    placeholderTextColor="#CBD5E1"
+                    style={styles.input}
+                />
+            </View>
         </View>
     );
 }
