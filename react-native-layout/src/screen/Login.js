@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
 export default function Login() {
     return(
         <View style={styles.container}>
+
+
+
+            <Image source={require('../assets/login.png')} style={{width:100, height:100, marginBottom:20}} />
             <Text style={styles.text}>Login</Text>
 
             <TextInput style={styles.input} placeholder="Name" />
