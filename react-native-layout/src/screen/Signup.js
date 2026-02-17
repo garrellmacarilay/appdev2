@@ -74,6 +74,17 @@ export default function Signup() {
                     style={styles.input}
                 />
             </View>
+
+            {/* Email Input */}
+            <View style={styles.inputContainer}>
+                <Ionicons style={styles.icon} name="mail-outline" size={20} color="#94A3B8" />
+                <TextInput
+                    placeholder="Email"
+                    placeholderTextColor="#CBD5E1"
+                    style={styles.input}
+                    keyboardType="email-address"
+                />
+            </View>
         </View>
     );
 }
