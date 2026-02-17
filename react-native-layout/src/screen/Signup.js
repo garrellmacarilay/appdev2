@@ -102,6 +102,20 @@ export default function Signup() {
                     <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
                 </TouchableOpacity>
             </View>
+
+            {/* Confirm Password Input */}
+            <View style={styles.inputContainer}>
+                <Ionicons style={styles.icon} name="lock-closed-outline" size={20} color="#94A3B8" />
+                <TextInput
+                    placeholder="Confirm Password"
+                    placeholderTextColor="#CBD5E1"
+                    secureTextEntry={true}
+                    style={styles.input}
+                />
+                <TouchableOpacity style={styles.eyeIcon}>
+                    <Ionicons name="eye-off-outline" size={20} color="#94A3B8" />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
