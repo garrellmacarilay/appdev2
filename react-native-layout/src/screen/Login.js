@@ -36,34 +36,24 @@ const styles = StyleSheet.create({
     forgotPassword:{
         color:'blue',
     },
-    pressable:{
+    button:{
         width:'100%',
         backgroundColor: 'blue',
         borderRadius: 8,
         marginTop: 20,
     },
-    pressableText:{
+    buttonText:{
         color: '#fff',
         padding: 12,
         textAlign: 'center',
         fontSize: 16,
         fontWeight: 'bold',
     },
-    socialContainer:{
-        flexDirection:'row',
-        justifyContent: 'center',
-        marginTop: 20,
-        gap: 20,
-    },
 
-    socialButton:{
-        flexDirection:'row',
-        alignItems: 'center',
-        padding: 10,
-        gap:5
-    }
+
 
 });
+
 
 export default function Login() {
     return(
@@ -85,7 +75,13 @@ export default function Login() {
                 <TextInput  placeholder="Password" secureTextEntry={true} />
             </View>
 
-           
+             <View style={styles.forgotPasswordContainer}>
+                <Text style={styles.forgotPassword}>Forgot password?</Text>
+            </View>
+
+           <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
            
            
            
