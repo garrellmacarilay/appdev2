@@ -133,12 +133,6 @@ export default function Signup({ navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#F8F9FD' }}>
             <View style={styles.container}>
-                {/* Illustration */}
-                <Image
-                    source={require('../assets/login.png')}
-                    style={styles.illustration}
-                    resizeMode="contain"
-                />
 
                 {/* Heading */}
                 <Text style={styles.heading}>Sign Up</Text>
