@@ -105,8 +105,14 @@ export default function Login() {
                     <Ionicons name="logo-google" size={20} color="black"/>
                     <Text style={{color: 'black'}}>Google</Text>
                 </TouchableOpacity>
+
+                 <TouchableOpacity style={[styles.socialButton, {backgroundColor: 'blue', borderRadius: 8}]}>
+                    <Ionicons name="logo-facebook" size={20} color="#fff" />
+                    <Text style={{color: '#fff'}}>Facebook</Text>
+                 </TouchableOpacity>
+
             </View>
-           
+
            
            
         </View>
