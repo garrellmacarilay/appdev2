@@ -1,4 +1,5 @@
-import {View, Text, StyleSheet, Image, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Image, TextInput, Pressable, TouchableOpacity} from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
     container:{ 
@@ -8,18 +9,60 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
     },
+    text: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 30,
+    },
     input:{
+        flexDirection:'row',
+        justifyContent:'flex-start',
         width:'100%',
-        boderradius: 5,
+        alignItems: 'center',
+        borderRadius: 5,
         backgroundColor: '#fff',
         padding: 10,
         marginBottom: 15,
         borderColor: '#efefef',
+    },
+    icon:{
+        marginRight: 10,
+    },
+    forgotPasswordContainer:{
+        width:'100%',
+        alignItems: 'flex-end',
+        marginTop: 10,
+    },
+    forgotPassword:{
+        color:'blue',
+    },
+    pressable:{
+        width:'100%',
+        backgroundColor: 'blue',
+        borderRadius: 8,
+        marginTop: 20,
+    },
+    pressableText:{
+        color: '#fff',
+        padding: 12,
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    socialContainer:{
+        flexDirection:'row',
+        justifyContent: 'center',
+        marginTop: 20,
+        gap: 20,
+    },
 
-
+    socialButton:{
+        flexDirection:'row',
+        alignItems: 'center',
+        padding: 10,
+        gap:5
     }
-   
-    
+
 });
 
 export default function Login() {
@@ -29,10 +72,22 @@ export default function Login() {
 
 
             <Image source={require('../assets/login.png')} style={{width:100, height:100, marginBottom:20}} />
+
             <Text style={styles.text}>Login</Text>
 
-            <TextInput style={styles.input} placeholder="Name" />
-            <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
+            <View style={styles.input}>
+                <Ionicons style={styles.icon} name="mail-outline" size={28} color="gray" />
+                <TextInput placeholder="Name" />
+            </View>
+
+            <View style={styles.input}>
+                <Ionicons style={styles.icon} name="lock-closed-outline" size={28} color="gray" />
+                <TextInput  placeholder="Password" secureTextEntry={true} />
+            </View>
+
+           
+           
+           
            
         </View>
     )
