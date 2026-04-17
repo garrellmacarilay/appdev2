@@ -42,16 +42,16 @@ function DetailsScreen({ route }) {
       <Text>Details Screen</Text>
       <Text>itemId: {JSON.stringify(itemId)}</Text>
       <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+      
       <Button
         onPress={
           () =>
-            navigation.push('Details', {
-              // Randomly generate an ID for demonstration purposes
-              itemId: Math.floor(Math.random() * 100),
-            })
+          navigation.setParams({
+            itemId: Math.floor(Math.random() * 100),
+          })
         }
       >
-        Go to Details... again
+        Update itemId on this screen
       </Button>
     </View>
   );
