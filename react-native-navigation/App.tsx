@@ -1,66 +1,61 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 import {
   createStaticNavigation,
   useNavigation,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button } from '@react-navigation/elements';
 
-function SettingsScreen({ route }) {
-  const { userId } = route.params;
+import type {
+  RootStackParamList,
+  HomeScreenNavigationProp,
+  DetailsProps,
+  DetailsScreenNavigationProp,
+} from './types';
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Settings Screen</Text>
-      <Text>User ID: {JSON.stringify(userId)}</Text>
-    </View>
-  );
-}
 function HomeScreen() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 }}>
       <Text>Home Screen</Text>
       <Button
-        onPress={
-          () =>
-            navigation.navigate('More', {
-              screen: 'Settings',
-              params: { userId: 'jane' },
-            })
+        onPress={() =>
+          navigation.navigate('Details', {
+            itemId: 86,
+            otherParam: 'anything you want here',
+          })
         }
       >
-        Go to Settings
+        Go to Details
       </Button>
     </View>
   );
 }
 
-function ProfileScreen() {
+function DetailsScreen({ route }: DetailsProps) {
+  const navigation = useNavigation<DetailsScreenNavigationProp>();
+  const { itemId, otherParam } = route.params;
+
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+      <Text>Details Screen</Text>
+      <Text>itemId: {itemId}</Text>
+      <Text>otherParam: {otherParam ?? 'none'}</Text>
+      <Button onPress={() => navigation.goBack()}>Go back</Button>
     </View>
   );
 }
-const MoreStack = createNativeStackNavigator({
-  screens: {
-    Settings: SettingsScreen,
-    Profile: ProfileScreen,
-  },
-});
 
-const RootTabs = createBottomTabNavigator({
+const RootStack = createNativeStackNavigator<RootStackParamList>({
   screens: {
     Home: HomeScreen,
-    More: MoreStack,
+    Details: DetailsScreen,
   },
 });
 
-const Navigation = createStaticNavigation(RootTabs);
+const Navigation = createStaticNavigation(RootStack);
 
 export default function App() {
   return <Navigation />;
